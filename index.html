@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solent Alumni Hub - Live Prototype</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Custom Styles -->
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body class="min-h-screen">
 
-    <!-- HEADER & NAVIGATION -->
     <header class="bg-white shadow-lg sticky top-0 z-50" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <!-- Solent Logo -->
                 <div class="flex items-center space-x-3">
                     <img src="/static/solent-logo.svg" alt="Solent University Logo" class="w-12 h-12" role="img" aria-label="Solent University Logo">
                     <span class="text-xl font-bold text-blue-900">Alumni Hub</span>
                 </div>
                 
-                <!-- Primary Navigation -->
                 <nav class="flex space-x-4 md:space-x-8" role="navigation" aria-label="Main navigation">
                     <a href="#benefits" class="text-gray-700 hover:text-red-600 font-medium transition-colors text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded" aria-label="Navigate to Benefits section">Benefits</a>
                     <a href="#search" class="text-gray-700 hover:text-red-600 font-medium transition-colors text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded" aria-label="Navigate to Search section">Search</a>
@@ -29,7 +24,6 @@
                     <a href="#support" class="text-gray-700 hover:text-red-600 font-medium transition-colors text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded" aria-label="Navigate to Support section">Support</a>
                 </nav>
 
-                <!-- Mobile Navigation -->
                 <nav id="mobileNav" class="lg:hidden hidden" role="navigation" aria-label="Mobile navigation">
                     <div class="absolute top-16 left-0 right-0 bg-white shadow-lg border-t">
                         <div class="px-4 py-2 space-y-1">
@@ -41,7 +35,6 @@
                     </div>
                 </nav>
 
-                <!-- User Actions -->
                 <div class="flex items-center space-x-4">
                     <div id="userActions">
                         <a href="/login" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
@@ -58,14 +51,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section id="search" class="bg-gradient-to-r from-red-600 to-red-800 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome Back, Alumni</h1>
                 <p class="text-xl text-red-100 mb-8">Your journey continues here. Connect, grow, and make a difference.</p>
                 
-                <!-- Dedicated Alumni Search -->
                 <div class="max-w-2xl mx-auto">
                     <label for="searchInput" class="sr-only">Search alumni directory</label>
                     <div class="relative">
@@ -89,13 +80,12 @@
                             </span>
                         </button>
                     </div>
-                    <p id="searchHelp" class="text-sm text-red-200 mt-2">Find alumni by name, degree, company, or location</p>
+                    <p id="searchHelp" class="text-sm text-red-200 mt-2">Find alumni by name, degree, company, year or location</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEARCH RESULTS SECTION -->
     <section id="searchResults" class="py-8 bg-white hidden">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center mb-6">
@@ -103,12 +93,10 @@
                 <button id="clearSearch" class="text-gray-500 hover:text-gray-700 text-sm">Clear Results</button>
             </div>
             <div id="searchResultsContent" class="space-y-4">
-                <!-- Search results will be populated here -->
             </div>
         </div>
     </section>
 
-    <!-- SYSTEM STATUS INDICATORS -->
     <div id="systemStatus" class="fixed top-4 right-4 z-50 hidden">
         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg shadow-lg">
             <div class="flex items-center">
@@ -120,11 +108,9 @@
             </div>
         </div>
     </div>
-<!-- CORE CALLS TO ACTION -->
 <section id="support" class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- CTA 1: Career Support -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center cta-button">
                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +124,6 @@
                 </button>
             </div>
 
-            <!-- CTA 2: Community Networking -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center cta-button">
                 <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +137,6 @@
                 </button>
             </div>
 
-            <!-- CTA 3: Benefits -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center cta-button">
                 <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,13 +152,11 @@
         </div>
     </div>
 </section>
-    <!-- LATEST COMMUNITY ACTIVITY -->
     <section id="events" class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Latest Community Activity</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Alumni Spotlight -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden alumni-card">
                     <div class="h-48 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
                         <div class="text-center text-white">
@@ -193,7 +175,6 @@
                     </div>
                 </div>
 
-                <!-- Upcoming Events -->
                 <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-xl font-bold text-gray-900 mb-6">Upcoming Alumni Events</h3>
                     <div class="space-y-4">
@@ -237,7 +218,6 @@
 
     
 
-    <!-- BENEFITS SECTION -->
     <section id="benefits" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Your Alumni Benefits</h2>
@@ -277,7 +257,6 @@
 
    
 
-    <!-- FOOTER -->
     <footer id="support" class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -303,7 +282,7 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/privacy-policy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">GDPR Compliance</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
@@ -339,7 +318,6 @@
         </div>
     </footer>
 
-    <!-- Accessibility Features -->
     <div class="sr-only">
         <h2>Accessibility Features</h2>
         <ul>
@@ -351,7 +329,6 @@
         </ul>
     </div>
 
-    <!-- GDPR Compliance Notice -->
     <div id="gdpr-notice" class="fixed bottom-0 left-0 right-0 bg-red-900 text-white p-4 z-50" style="display: none;" role="dialog" aria-labelledby="gdpr-title" aria-describedby="gdpr-description">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div>
@@ -372,7 +349,6 @@
         </div>
     </div>
 
-    <!-- Cookie Settings Modal -->
     <div id="cookie-settings" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" role="dialog" aria-labelledby="cookie-settings-title" aria-modal="true">
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-lg max-w-2xl w-full p-6">
@@ -409,7 +385,6 @@
     </div>
 
     <script>
-        // GDPR Compliance
         function acceptCookies() {
             localStorage.setItem('gdpr-accepted', 'true');
             localStorage.setItem('cookie-preferences', JSON.stringify({
@@ -418,7 +393,6 @@
                 marketing: true
             }));
             document.getElementById('gdpr-notice').style.display = 'none';
-            // Initialize analytics if accepted
             initializeAnalytics();
         }
 
@@ -443,7 +417,7 @@
 
         function saveCookieSettings() {
             const preferences = {
-                essential: true, // Always true
+                essential: true,
                 analytics: document.getElementById('analytics-cookies').checked,
                 marketing: document.getElementById('marketing-cookies').checked
             };
@@ -452,23 +426,19 @@
             localStorage.setItem('gdpr-accepted', 'true');
             document.getElementById('cookie-settings').classList.add('hidden');
             
-            // Initialize services based on preferences
             if (preferences.analytics) {
                 initializeAnalytics();
             }
         }
 
         function initializeAnalytics() {
-            // Initialize Google Analytics or other analytics tools here
             console.log('Analytics initialized');
         }
 
-        // Show GDPR notice if not previously accepted
         if (!localStorage.getItem('gdpr-accepted')) {
             document.getElementById('gdpr-notice').style.display = 'block';
         }
 
-        // Load saved cookie preferences
         const savedPreferences = localStorage.getItem('cookie-preferences');
         if (savedPreferences) {
             const preferences = JSON.parse(savedPreferences);
@@ -476,7 +446,6 @@
             document.getElementById('marketing-cookies').checked = preferences.marketing;
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -490,7 +459,6 @@
             });
         });
 
-        // Search functionality with system status
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const searchText = document.getElementById('searchText');
@@ -585,7 +553,6 @@
             searchResults.classList.remove('hidden');
         }
 
-        // Event listeners
         searchButton.addEventListener('click', performSearch);
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
@@ -599,7 +566,6 @@
             searchResultsContent.innerHTML = '';
         });
 
-        // Mobile menu toggle with accessibility
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileNav = document.getElementById('mobileNav');
 
@@ -608,12 +574,10 @@
             mobileNav.classList.toggle('hidden');
             mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             
-            // Announce to screen readers
             const announcement = isExpanded ? 'Mobile menu opened' : 'Mobile menu closed';
             announceToScreenReader(announcement);
         });
 
-        // Close mobile menu when clicking on a link
         const mobileNavLinks = mobileNav.querySelectorAll('a');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -621,14 +585,12 @@
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!mobileMenuButton.contains(event.target) && !mobileNav.contains(event.target)) {
                 mobileNav.classList.add('hidden');
             }
         });
 
-        // Check authentication status and update UI
         async function checkAuthStatus() {
             try {
                 const response = await fetch('/api/user');
@@ -654,7 +616,6 @@
                 </div>
             `;
             
-            // Update hero section
             const heroTitle = document.querySelector('#search h1');
             const heroSubtitle = document.querySelector('#search p');
             if (heroTitle && heroSubtitle) {
@@ -671,7 +632,6 @@
                 </a>
             `;
             
-            // Reset hero section to default
             const heroTitle = document.querySelector('#search h1');
             const heroSubtitle = document.querySelector('#search p');
             if (heroTitle && heroSubtitle) {
@@ -680,7 +640,6 @@
             }
         }
 
-        // Accessibility: Screen reader announcements
         function announceToScreenReader(message) {
             const announcement = document.createElement('div');
             announcement.setAttribute('aria-live', 'polite');
@@ -694,7 +653,6 @@
             }, 1000);
         }
 
-        // Accessibility: Skip to main content link
         function addSkipLink() {
             const skipLink = document.createElement('a');
             skipLink.href = '#search';
@@ -703,10 +661,8 @@
             document.body.insertBefore(skipLink, document.body.firstChild);
         }
 
-        // Initialize accessibility features
         addSkipLink();
 
-        // Check auth status on page load
         checkAuthStatus();
     </script>
 </body>

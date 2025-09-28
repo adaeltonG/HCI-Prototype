@@ -7,7 +7,6 @@ from functools import wraps
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-in-production'
 
-# Serve static files
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory('static', filename)
@@ -16,12 +15,10 @@ def static_files(filename):
 def privacy_policy():
     return render_template('privacy-policy.html')
 
-# Database initialization
 def init_db():
     conn = sqlite3.connect('prototype.db')
     cursor = conn.cursor()
     
-    # Create users table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +30,6 @@ def init_db():
         )
     ''')
     
-    # Create search_logs table for tracking search keywords
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS search_logs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,7 +40,6 @@ def init_db():
         )
     ''')
     
-    # Create alumni_data table for demonstration
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS alumni_data (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,10 +54,8 @@ def init_db():
         )
     ''')
     
-    # Check if user already exists
     cursor.execute('SELECT COUNT(*) FROM users WHERE username = ?', ('Adaelton',))
     if cursor.fetchone()[0] == 0:
-        # Create test user with encrypted password
         password = 'user123'
         password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         
@@ -71,7 +64,6 @@ def init_db():
             VALUES (?, ?, ?, ?)
         ''', ('Adaelton', password_hash, 'Adaelton Silva', 'adaelton@example.com'))
     
-    # Insert dummy alumni data
     cursor.execute('SELECT COUNT(*) FROM alumni_data')
     if cursor.fetchone()[0] == 0:
         dummy_alumni = [
@@ -90,7 +82,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Login required decorator
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -106,7 +97,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username'].lower()  # Convert to lowercase
+        username = request.form['username'].lower()
         password = request.form['password']
         
         conn = sqlite3.connect('prototype.db')
@@ -117,7 +108,7 @@ def login():
         
         if user and bcrypt.checkpw(password.encode('utf-8'), user[1]):
             session['user_id'] = user[0]
-            session['username'] = user[3]  # Use original case from database
+            session['username'] = user[3]
             session['full_name'] = user[2]
             flash('Login successful!', 'success')
             return redirect(url_for('index'))
@@ -150,7 +141,6 @@ def search_alumni():
         if not search_term:
             return jsonify({'results': [], 'message': 'Please enter a search term'})
         
-        # Log search keyword
         conn = sqlite3.connect('prototype.db')
         cursor = conn.cursor()
         cursor.execute('''
@@ -159,7 +149,6 @@ def search_alumni():
         ''', (session['user_id'], search_term))
         conn.commit()
         
-        # Search alumni data
         cursor.execute('''
             SELECT name, graduation_year, degree, current_position, company, location, email, linkedin_url
             FROM alumni_data

@@ -1,37 +1,18 @@
-/* ========================================
-   SOLENT ALUMNI HUB - STYLES
-   ======================================== */
-
-/* ========================================
-   BASE STYLES
-   ======================================== */
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc;
 }
 
-/* ========================================
-   LOGIN PAGE SPECIFIC STYLES
-   ======================================== */
-
-/* Login page background gradient */
 body.login-page {
     background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
     min-height: 100vh;
 }
 
-/* Login container with glassmorphism effect */
 .login-container {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
 }
 
-/* ========================================
-   FORM ELEMENTS
-   ======================================== */
-
-/* Search bar styling */
 .search-bar {
     transition: all 0.3s ease;
 }
@@ -40,7 +21,6 @@ body.login-page {
     box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
-/* Input field styling */
 .input-field {
     transition: all 0.3s ease;
 }
@@ -50,11 +30,6 @@ body.login-page {
     border-color: #dc2626;
 }
 
-/* ========================================
-   BUTTON STYLES
-   ======================================== */
-
-/* CTA button animations */
 .cta-button {
     transition: all 0.3s ease;
 }
@@ -64,7 +39,6 @@ body.login-page {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Login button styling */
 .login-button {
     transition: all 0.3s ease;
 }
@@ -74,11 +48,6 @@ body.login-page {
     box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
 }
 
-/* ========================================
-   CARD COMPONENTS
-   ======================================== */
-
-/* Alumni card hover effects */
 .alumni-card {
     transition: all 0.3s ease;
 }
@@ -88,11 +57,6 @@ body.login-page {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================================
-   SYSTEM STATUS INDICATORS
-   ======================================== */
-
-/* Loading spinner animation */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -106,7 +70,6 @@ body.login-page {
     animation: spin 1s linear infinite;
 }
 
-/* Status indicator positioning */
 .system-status {
     position: fixed;
     top: 1rem;
@@ -114,11 +77,6 @@ body.login-page {
     z-index: 50;
 }
 
-/* ========================================
-   SEARCH RESULTS
-   ======================================== */
-
-/* Search result cards */
 .search-result-card {
     background: white;
     border: 1px solid #e5e7eb;
@@ -131,11 +89,6 @@ body.login-page {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
-
-/* Mobile-first approach */
 @media (max-width: 640px) {
     .login-container {
         margin: 1rem;
@@ -148,14 +101,12 @@ body.login-page {
     }
 }
 
-/* Tablet adjustments */
 @media (min-width: 768px) and (max-width: 1024px) {
     .alumni-card {
         margin-bottom: 1rem;
     }
 }
 
-/* Desktop enhancements */
 @media (min-width: 1024px) {
     .cta-button:hover {
         transform: translateY(-3px);
@@ -163,11 +114,6 @@ body.login-page {
     }
 }
 
-/* ========================================
-   ACCESSIBILITY
-   ======================================== */
-
-/* Focus indicators for keyboard navigation */
 button:focus,
 input:focus,
 a:focus {
@@ -175,7 +121,6 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
     .search-bar {
         border: 2px solid #000;
@@ -186,7 +131,6 @@ a:focus {
     }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     .search-bar,
     .input-field,
@@ -201,45 +145,32 @@ a:focus {
     }
 }
 
-/* ========================================
-   UTILITY CLASSES
-   ======================================== */
-
-/* Hidden utility */
 .hidden {
     display: none !important;
 }
 
-/* Loading state */
 .loading {
     opacity: 0.6;
     pointer-events: none;
 }
 
-/* Success state */
 .success {
     color: #059669;
     background-color: #d1fae5;
     border-color: #10b981;
 }
 
-/* Error state */
 .error {
     color: #dc2626;
     background-color: #fee2e2;
     border-color: #f87171;
 }
 
-/* Warning state */
 .warning {
     color: #d97706;
     background-color: #fef3c7;
     border-color: #fbbf24;
 }
-
-/* ========================================
-   SOLENT BRAND COLORS
-   ======================================== */
 
 :root {
     --solent-red: #cd1422;
@@ -250,11 +181,6 @@ a:focus {
     --solent-gray-light: #f3f4f6;
 }
 
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-
-/* Fade in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -270,7 +196,6 @@ a:focus {
     animation: fadeIn 0.3s ease-out;
 }
 
-/* Slide in animation */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -285,10 +210,6 @@ a:focus {
 .slide-in {
     animation: slideIn 0.3s ease-out;
 }
-
-/* ========================================
-   PRINT STYLES
-   ======================================== */
 
 @media print {
     .system-status,

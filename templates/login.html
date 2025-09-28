@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Solent Alumni Hub</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Custom Styles -->
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body class="login-page flex items-center justify-center min-h-screen p-4">
     <div class="login-container rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <!-- Solent Logo -->
         <div class="text-center mb-8">
             <div class="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
                 <img src="/static/solent-logo.svg" alt="Solent University Logo" class="w-50 h-50">
@@ -20,7 +17,6 @@
             <p class="text-gray-600 mt-2">Sign in to your account</p>
         </div>
 
-        <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -31,7 +27,6 @@
             {% endif %}
         {% endwith %}
 
-        <!-- Login Form -->
         <form method="POST" class="space-y-6">
             <div>
                 <label for="username" class="block text-lg font-medium text-gray-700 mb-2">Username</label>
@@ -60,7 +55,6 @@
         </form>
 
        
-        <!-- Security Notice -->
         <div class="mt-6 text-center">
            
         </div>
