@@ -8,7 +8,5 @@ if __name__ == '__main__':
     init_db()
     print("✅ Database initialized successfully!")
     print("🌐 Server starting at http://localhost:5000")
-    print("👤 Demo credentials: Username: Adaelton, Password: user123")
-    
-    
-    app.run(host='0.0.0.0', port=5000)
+    print("👤 Demo credentials: Username: Adaelton, Password: user123")    
+    app.run(port=5000)

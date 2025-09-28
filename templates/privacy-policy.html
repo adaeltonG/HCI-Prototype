@@ -223,5 +223,45 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('/api/user');
+                if (response.ok) {
+                    const user = await response.json();
+                    updateUIForLoggedInUser(user);
+                } else {
+                    updateUIForLoggedOutUser();
+                }
+            } catch (error) {
+                updateUIForLoggedOutUser();
+            }
+        }
+
+        function updateUIForLoggedInUser(user) {
+            const userActions = document.getElementById('userActions');
+            userActions.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <span class="text-gray-700">Welcome, <span class="font-semibold text-red-600">${user.full_name}</span>!</span>
+                    <a href="/logout" class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Logout
+                    </a>
+                </div>
+            `;
+        }
+
+        function updateUIForLoggedOutUser() {
+            const userActions = document.getElementById('userActions');
+            userActions.innerHTML = `
+                <a href="/login" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    Sign In
+                </a>
+            `;
+        }
+
+        // Check authentication status when page loads
+        checkAuthStatus();
+    </script>
 </body>
 </html>
