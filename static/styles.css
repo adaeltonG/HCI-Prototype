@@ -1,0 +1,310 @@
+/* ========================================
+   SOLENT ALUMNI HUB - STYLES
+   ======================================== */
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+
+/* ========================================
+   LOGIN PAGE SPECIFIC STYLES
+   ======================================== */
+
+/* Login page background gradient */
+body.login-page {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    min-height: 100vh;
+}
+
+/* Login container with glassmorphism effect */
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+/* Search bar styling */
+.search-bar {
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Input field styling */
+.input-field {
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    border-color: #dc2626;
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+/* CTA button animations */
+.cta-button {
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Login button styling */
+.login-button {
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* ========================================
+   CARD COMPONENTS
+   ======================================== */
+
+/* Alumni card hover effects */
+.alumni-card {
+    transition: all 0.3s ease;
+}
+
+.alumni-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   SYSTEM STATUS INDICATORS
+   ======================================== */
+
+/* Loading spinner animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Status indicator positioning */
+.system-status {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+}
+
+/* ========================================
+   SEARCH RESULTS
+   ======================================== */
+
+/* Search result cards */
+.search-result-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-result-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile-first approach */
+@media (max-width: 640px) {
+    .login-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .search-bar {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .alumni-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Focus indicators for keyboard navigation */
+button:focus,
+input:focus,
+a:focus {
+    outline: 2px solid #dc2626;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .search-bar {
+        border: 2px solid #000;
+    }
+    
+    .input-field {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .search-bar,
+    .input-field,
+    .cta-button,
+    .login-button,
+    .alumni-card {
+        transition: none;
+    }
+    
+    .animate-spin {
+        animation: none;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Hidden utility */
+.hidden {
+    display: none !important;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success state */
+.success {
+    color: #059669;
+    background-color: #d1fae5;
+    border-color: #10b981;
+}
+
+/* Error state */
+.error {
+    color: #dc2626;
+    background-color: #fee2e2;
+    border-color: #f87171;
+}
+
+/* Warning state */
+.warning {
+    color: #d97706;
+    background-color: #fef3c7;
+    border-color: #fbbf24;
+}
+
+/* ========================================
+   SOLENT BRAND COLORS
+   ======================================== */
+
+:root {
+    --solent-red: #cd1422;
+    --solent-red-light: #dc2626;
+    --solent-red-dark: #991b1b;
+    --solent-blue: #1e40af;
+    --solent-gray: #6b7280;
+    --solent-gray-light: #f3f4f6;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .system-status,
+    .search-results,
+    .cta-button,
+    .login-button {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .alumni-card {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+}
